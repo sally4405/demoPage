@@ -1,0 +1,166 @@
+body, p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.rectangle {
+    width: 1440px;
+    height: 620px;
+    object-fit: contain;
+    border: solid 1px #979797;
+}
+
+#upper {
+    position: relative;
+}
+
+.select-box {
+    position: absolute;
+    top: 60px;
+    left: 220px;
+    background-color: white; 
+    height: 500px;
+    width: 460px; 
+    box-sizing: border-box;
+    padding: 24px 20px 28px 20px;
+}
+
+.select-box__header {
+    width: 100%;
+    height: 62px;
+    font-family: AppleSDGothicNeo;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.select-box__description {
+    width: 100%;
+    height: 60px;
+    margin-top: 14px;
+    padding-right: 7px;
+    box-sizing: border-box;
+    font-family: AppleSDGothicNeo;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.39;
+}
+
+label.select-box__contents-label {
+    display: block;
+    margin-bottom: 7px;
+    width: 73px;
+    height: 13px;
+    font-family: AppleSDGothicNeo;
+    font-size: 13px;
+    font-weight: bold;      
+}
+
+.select-box__contents-input,
+.select-box__button {
+    width: 100%;
+    height: 40px;
+    padding: 5px 21px 4px 19px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: solid 1px #d5d2d2;
+    background-color: #ffffff;
+    font-family: AppleSDGothicNeo;
+    font-size: 13px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.select-box__button {
+    background-color: #ff5a60;
+    color: #ffffff;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+}
+
+.select-box__contents {
+    margin-bottom: 20px;
+}
+
+#select-box-form {
+    font-size: 0;
+}
+
+.small-box {
+    display: inline-block;
+    width: 50%;
+}
+
+.lower {
+    width: 1000px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.review-header {
+    width: 460px;
+    height: 40px;
+    font-family: AppleSDGothicNeo;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.review-description__contents {
+    padding-bottom: 8px;
+    margin-left: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+li {
+    list-style-type: none;
+    font-size: 0;
+}
+
+.review-contents {
+    width: 320px;
+}
+
+.review-contents__stars {
+    display: block;
+    margin-top: 22px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.review-contents__text,
+.review-contents__reviewer {
+    font-family: AppleSDGothicNeo;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.review-contents__text {
+    height: 70px;
+}
+
+.review-contents__reviewer {
+    display: flex;
+    align-items: center;
+}
+
+.review-contents__reviewer-img {
+    margin-right: 10px;
+}
+
+.review-contents__reviewer-info__name {
+    font-weight: bold;
+}
