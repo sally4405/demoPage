@@ -1,11 +1,11 @@
 import { getElement, getElements, classAdd, classRemove } from '../util/domUtil.js';
-import { productPanel } from '../util/template.js';
+import { productPanel } from '../data/template.js';
 
 class ProductView {
     constructor(vendingMachineModel) {
         this.vendingMachineModel = vendingMachineModel;
         this.vendingMachineModel.subscribe('UPDATE_CASH_INFO', this.updateProductHighlight.bind(this));
-        this.vendingMachineModel.subscribe('INIT', this.render.bind(this));
+        this.vendingMachineModel.subscribe('INIT_VENDING_MACHINE', this.render.bind(this));
     }
 
     render(data) {

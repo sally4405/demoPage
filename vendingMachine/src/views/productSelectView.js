@@ -1,5 +1,5 @@
 import { getElement, getElements } from '../util/domUtil.js';
-import { productSelectPanel } from '../util/template.js';
+import { productSelectPanel } from '../data/template.js';
 
 class ProductSelectView {
     constructor(vendingMachineModel) {

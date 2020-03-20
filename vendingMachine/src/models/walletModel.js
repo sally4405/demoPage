@@ -11,14 +11,14 @@ class WalletModel extends Observable {
     }
 
     init() {
-        this.getData(URL.DEV.WALLET_DATA);
+        this.getData(URL.DEV.WALLET_API);
     }
 
     async getData(url) {
         const response = await fetch(url);
         this.walletData = await response.json();
         this.setCashInfo(this.walletData);
-        this.notify('INIT', this.walletData);
+        this.notify('INIT_VENDING_MACHINE', this.walletData);
     }
 
     setCashInfo(data) {

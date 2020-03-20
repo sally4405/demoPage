@@ -1,13 +1,13 @@
 import { getElement } from '../util/domUtil.js';
-import { walletPanel } from '../util/template.js';
+import { walletPanel } from '../data/template.js';
 
 class WalletView {
     constructor(walletModel, vendingMachineModel) {
         this.walletModel = walletModel;
         this.vendingMachineModel = vendingMachineModel;
-        this.walletModel.subscribe('UPDATE_CASH_INFO', this.cashInfoUpdate.bind(this));
+        this.walletModel.subscribe('UPDATE_CASH_INFO', this.updateCashInfo.bind(this));
         this.walletModel.subscribe('CHANGE_CASH', this.searchCashCountEl.bind(this));
-        this.walletModel.subscribe('INIT', this.render.bind(this));
+        this.walletModel.subscribe('INIT_VENDING_MACHINE', this.render.bind(this));
         this.cashCountEl = null;
     }
 
@@ -30,7 +30,7 @@ class WalletView {
         this.vendingMachineModel.changeModel.changeDelay = setTimeout(this.vendingMachineModel.notifyAddChange.bind(this.vendingMachineModel), 5000);
     }
 
-    cashInfoUpdate(cashCount, cashTotal) {
+    updateCashInfo(cashCount, cashTotal) {
         this.total = getElement('.wallet-cash-total');
         this.cashCountEl.innerHTML = cashCount;
         this.total.innerHTML = cashTotal;

@@ -16,13 +16,13 @@ class VendingMachineModel extends Observable {
     }
 
     init() {
-        this.getData(URL.DEV.PRODUCT_DATA);
+        this.getData(URL.DEV.PRODUCT_API);
     }
 
     async getData(url) {
         const response = await fetch(url);
         this.productData = await response.json();
-        this.notify('INIT', this.productData);
+        this.notify('INIT_VENDING_MACHINE', this.productData);
     }
 
     sumInsertedCash(cashUnit, cashCount) {
@@ -52,7 +52,7 @@ class VendingMachineModel extends Observable {
         this.notifySelectedProduct();
     }
 
-    findProductInfo() {
+    getProductInfo() {
         return {
             emoji: this.productData[parseInt(this.selectedProductIndex) - 1].emoji,
             name: this.productData[parseInt(this.selectedProductIndex) - 1].name,
@@ -62,7 +62,7 @@ class VendingMachineModel extends Observable {
 
     notifySelectedProduct() {
         if (parseInt(this.selectedProductIndex) === 0) return;
-        const productInfo = this.findProductInfo();
+        const productInfo = this.getProductInfo();
         this.selectedProductIndex = DEFAULT.PRODUCT_INDEX;
         this.notify('SELECT_PRODUCT', this.selectedProductIndex);
         this.purchase(productInfo);
